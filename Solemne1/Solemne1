@@ -1,0 +1,33 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 1. Crear datos aleatorios (Simulamos notas de alumnos)
+np.random.seed(42)
+datos = {
+    'Horas_Estudio': np.random.randint(1, 20, 50),
+    'Nota_Final': np.random.uniform(1.0, 7.0, 50),
+    'Asistencia': np.random.choice(['Alta', 'Baja'], 50)
+}
+
+# 2. Convertir a un DataFrame de Pandas
+df = pd.DataFrame(datos)
+
+# 3. Mostrar un resumen rápido en la terminal
+print("--- Resumen Estadístico ---")
+print(df.describe())
+print("\n--- Primeras 5 filas ---")
+print(df.head())
+
+# 4. Crear un gráfico profesional con Seaborn
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=df, x='Horas_Estudio', y='Nota_Final', hue='Asistencia', style='Asistencia', s=100)
+
+plt.title('Relación entre Horas de Estudio y Notas')
+plt.grid(True, linestyle='--', alpha=0.6)
+
+# 5. Guardar y mostrar
+plt.savefig('grafico_prueba.png') # Se guardará en tu carpeta MineriaDatos
+print("\n✅ ¡Gráfico generado y guardado como 'grafico_prueba.png'!")
+plt.show()

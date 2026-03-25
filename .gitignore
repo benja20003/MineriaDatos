@@ -3,6 +3,10 @@
 venv/
 env/
 
+requierements.txt
+Solemne1_2026.md
+.gitignore
+
 # Archivos temporales de Python
 **/__pycache__/
 *.pyc

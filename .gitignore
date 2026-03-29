@@ -3,9 +3,11 @@
 venv/
 env/
 
-requierements.txt
 Solemne1_2026.md
 .gitignore
+
+# Ignorar archivos temporales de Jupyter
+.ipynb_checkpoints/
 
 # Archivos temporales de Python
 **/__pycache__/
